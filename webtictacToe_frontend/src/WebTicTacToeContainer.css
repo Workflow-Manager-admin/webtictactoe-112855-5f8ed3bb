@@ -1,0 +1,127 @@
+:root {
+  --color-primary: #4caf50;
+  --color-secondary: #ffc107;
+  --color-accent: #2196f3;
+  --ttt-bg: #fafbfc;
+  --ttt-border: #eaeaea;
+  --ttt-square-bg: #fff;
+  --ttt-square-hover: #e3f2fd;
+  --ttt-winner-bg: #4caf5022;
+  --ttt-shadow: 0 6px 24px 0 rgba(60,60,60,0.09);
+}
+
+.ttt-container {
+  background: var(--ttt-bg);
+  border-radius: 12px;
+  box-shadow: var(--ttt-shadow);
+  max-width: 340px;
+  margin: 48px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 24px 16px 16px 16px;
+}
+
+.ttt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ttt-header h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 16px 0;
+}
+
+.ttt-row {
+  display: flex;
+  gap: 4px;
+}
+
+.ttt-square {
+  background: var(--ttt-square-bg);
+  border: 2px solid var(--ttt-border);
+  color: #222;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.17s, border-color 0.2s;
+  outline: none;
+  box-shadow: 0 1px 3px 0 #e2e7f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.ttt-square:hover,
+.ttt-square:focus {
+  border-color: var(--color-primary);
+  background-color: var(--ttt-square-hover);
+}
+
+.ttt-status {
+  text-align: center;
+  font-size: 1.08rem;
+  min-height: 26px;
+  font-weight: 500;
+  color: #263238;
+  margin: 4px 0 5px 0;
+}
+
+.ttt-reset-btn {
+  background-color: var(--color-secondary);
+  color: #222;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 16px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 2px #dfdfdf73;
+  transition: background-color 0.18s;
+}
+.ttt-reset-btn:hover { opacity: 0.86; background-color: #ffd441; }
+
+.ttt-footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 1.06rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .ttt-container {
+    max-width: 98vw;
+    padding: 10vw 2vw 4vw 2vw;
+  }
+  .ttt-square {
+    width: 20vw;
+    height: 20vw;
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .ttt-square {
+    width: 16vw;
+    height: 16vw;
+    font-size: 1.5rem;
+  }
+}
